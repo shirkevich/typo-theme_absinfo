@@ -1,0 +1,80 @@
+/**
+ * Controls the main layout (width, height, margin, padding)
+ *
+ * #precontainer
+ *   #container
+ *     #header
+ *     #spoiler
+ *     #page
+ *       #content
+ *       #sidebar
+ *     #footer
+ */
+body {
+	text-align: center;
+	margin: 0; padding: 0em;
+}
+
+#precontainer {
+  padding: 100px 0 0;  
+}
+
+#container {
+	width: 790px;
+	text-align: left; 
+	margin: 0 auto; padding: 0;
+}
+
+#header {
+	height: 60px;
+	margin: 0; padding: 0 15px 2.3em 15px;
+}
+
+#spoiler {
+  margin: 0; padding: 0 15px;
+}
+
+#page {
+  margin: 58px 0 66px 0;
+}
+
+#content {
+	width: 525px;
+}
+
+#sidebar {
+	width: 214px;
+}
+
+#footer {
+	height: 40px;
+	margin: 0 0 3em; padding: 2.5em 0 0;
+	clear: both;
+}
+
+/*--------------------------------------------------------------
+ Sidebar Alignment: you can have left or right
+ --------------------------------------------------------------*/
+
+/* BEGIN: Right Sidebar */
+#sidebar {
+	float: right; text-align: left;
+	padding-left: 15px;
+}
+#content {
+	float: left;
+}
+/* END: Right Sidebar */
+
+
+/* BEGIN: Left Sidebar
+#sidebar {
+	float: left; text-align: right;
+	padding-right: 20px; 
+	border-right: 1px dotted #ddd; 
+}
+
+#content {
+	float: right; text-align: left;
+}
+/* END: Left Sidebar */

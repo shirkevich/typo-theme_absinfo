@@ -1,0 +1,37 @@
+<div class="atomentry<%= ' commented-atomentry' if article.published_comments.size > 0 %>" id="article-<%= article.id %>">
+  <p class="meta">
+    &ndash; <%= content_tag(:span, category_links(article), :class => 'categories') unless article.categories.empty? %>
+    <abbr class="published" title="<%= article.published_at.xmlschema %>"><%= article.published_at.strftime('%d %B %Y') %></abbr>
+  </p>
+
+  <h2 class="title">
+    <%= content_tag(:span, article.published_comments.size, :class => 'comment_count') if article.published_comments.size > 0 %>
+    <%= (controller.action_name.include? 'permalink') ? article.title : link_to_permalink(article,article.title) %>
+  </h2>
+
+  <div class="content">
+    <% unless controller.action_name == 'redirect' %>
+      <% if article.excerpt? %>
+        <%= article.excerpt %>
+      <% else %>
+        <%= article.html(:body) %>
+        <% if article.extended? %>
+          <div class="extended">
+            <p><%= link_to_permalink article,"Continue reading..." %></p>
+          </div>
+        <% end %>
+      <% end %>
+    <% else %>
+      <%= article.html(:body) %>
+      <div class="extended">
+        <%= article.html(:extended) %>
+      </div>
+    <% end %>
+  </div>
+
+  <% unless article.tags.empty? %>
+  <ul class="meta">
+    <%= content_tag(:li, tag_links(article), :class => 'tags') %>
+  </ul>
+  <% end %>
+</div>

@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <%= page_header %>
+  <title><%=h page_title %></title>
+  <%= stylesheet_link_tag '/stylesheets/theme/application.css', :media => 'all' %>
+</head>
+
+<body>
+<div id="precontainer">
+<div id="container">
+  <div id="header">
+    <h1><span><%= link_to this_blog.blog_name, this_blog.base_url %></span></h1>
+    <ul id="top-menu">
+      <li><%= link_to h('медицина'), category_url('медицина')  %></li>
+      <li><%= link_to h('психология'), category_url('психология')  %></li>
+      <li><%= link_to h('истории'), category_url('истории')  %></li>
+      <li><%= link_to h('ссылки'), category_url('ссылки')  %></li>
+      <li class="syndicate"><a href="#syndicate-there">rss</a></li>
+    </ul>
+  </div>
+  
+<% if request.path == '/' %>
+  <div id="spoiler">
+    <p>Когда ребенок рождается не таким, каким его ожидали увидеть, родители начинают искать причины, врачей, беспокоятся о будущем&hellip;<br/>Со временем оказывается, что на многие проблемы можно смотреть сквозь пальцы. Даже если у ребенка они<br/>не совсем обычной формы.</p>
+  </div>
+<% end %>
+
+  <div id="page">
+    <div id="content">
+      <%= @content_for_layout %>
+      <%= javascript_tag 'show_dates_as_local_time()' %>
+    </div>
+
+    <div id="sidebar">
+      <% if params[:controller] == 'categories' and params[:action] == 'show' %>
+        <div class="category-description"><%= @grouping.description %></div>
+      <% end %>
+      <!-- sidebar components -->
+      <%= render_sidebars %>
+    </div>
+    <br style="clear:both;" />
+  </div>
+
+  <div id="footer">
+    <p class="pisalnya"><%= link_to 'nervous yawping affective', 'http://kuzma.nya.ru/' %></p>
+    <ul>
+      <li class="email">E-mail: <a href="mailto:inbox@abshands.ru">inbox@abshands.ru</a></li>
+      <li class="powered-by">Powered by <%= link_to('typo', 'http://typosphere.org/') %> / <%= link_to('Andrey Moskovskiy', 'http://laylaylalalay.com/') %> / <%= link_to('&hellip;', 'http://clique.ru/') %></li>
+    </ul>
+  </div>
+</div>
+</div>
+</body>
+</html>

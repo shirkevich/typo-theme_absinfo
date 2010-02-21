@@ -1,0 +1,28 @@
+/*--------------------------------------------------------------
+ Application.css
+ Imports all stylesheets; sets defaults for bare elements
+ --------------------------------------------------------------*/
+
+@import 'layout.css';
+@import 'content.css';
+
+@media print { #sidebar { display:none; }
+               #content { float: none; width:90%; }
+               #content pre { color: #000; background: #eee; }
+               #content form.comments { display:none; } }
+
+body {
+  background: url(../../images/theme/background.jpg) repeat left top;
+  font: normal 15px "Georgia", serif;
+}
+
+input,
+textarea { font: normal 12px "Georgia", serif; }
+
+abbr  { border: none; }
+cite  { font-style: normal; }
+a img { border: none; padding: 0; margin: 0; }
+
+a:link,  a:visited { color: #167041; text-decoration: underline; }
+a:hover, a:active  { color: #167041; text-decoration: none; }
+a:focus { outline: 0; }
