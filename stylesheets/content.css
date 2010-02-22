@@ -251,7 +251,10 @@
   background-color: #df6484;
 	line-height: 13px;
 	text-decoration: none;
-	margin: 0; padding: 3px 12px;
+	margin-top: 0 0 6px 6px; 
+	padding: 7px 12px;
+	display: inline-block;
+	border-radius: 5px;
 	-moz-border-radius: 5px;
   -webkit-border-radius: 5px;
 }
