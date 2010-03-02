@@ -1,7 +1,7 @@
 <div class="atomentry<%= ' commented-atomentry' if article.published_comments.size > 0 %>" id="article-<%= article.id %>">
   <p class="meta">
     &ndash; <%= content_tag(:span, category_links(article), :class => 'categories') unless article.categories.empty? %>
-    <abbr class="published" title="<%= article.published_at.xmlschema %>"><%= article.published_at.strftime('%d %B %Y') %></abbr>
+    <abbr class="published" title="<%= article.published_at.xmlschema %>"><%= _(article.published_at.utc.strftime(_("%%a, %%d %%b %%Y %%H:%%M", article.published_at.utc))) %><%#= article.published_at.strftime('%d %B %Y') %></abbr>
   </p>
 
   <h2 class="title">
