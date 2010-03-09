@@ -24,6 +24,18 @@
   <div id="spoiler">
     <p>Когда ребенок рождается не таким, каким его ожидали увидеть, родители начинают искать причины, врачей, беспокоятся о будущем&hellip;<br/>Со временем оказывается, что на многие проблемы можно смотреть сквозь пальцы. Даже если у ребенка они<br/>не совсем обычной формы.</p>
   </div>
+<% elsif params[:controller] == 'categories' && params[:action] == 'show' && params[:id] == 'медицина'  %>
+  <div id="spoiler">
+    <p>Консультация специалиста, безусловно, необходима. Содержимое раздела может помочь подготовиться к ней, а потом понять некоторые из прозвучавших терминов.</p>
+  </div>
+<% elsif params[:controller] == 'categories' && params[:action] == 'show' && params[:id] == 'психология'  %>
+  <div id="spoiler">
+    <p>Статьи, фрагменты книг и сайтов для родителей "особых" детей. Возможно, не вполне корректно называть все это «Психология». Но как еще назвать то, что касается переживаний, отношений между людьми и принятия ими друг друга?</p>
+  </div>
+<% elsif params[:controller] == 'categories' && params[:action] == 'show' && params[:id] == 'истории'  %>
+  <div id="spoiler">
+    <p>Если Вы хотите прислать нам свою историю, пожалуйста, пишите на <a href="mailto:editor@absinfo.ru">editor@absinfo.ru</a></p>
+  </div>
 <% end %>
 
   <div id="page">
@@ -45,7 +57,7 @@
   <div id="footer">
     <p class="pisalnya"><%= link_to 'nervous yawping affective', 'http://kuzma.nya.ru/' %></p>
     <ul>
-      <li class="email">E-mail: <a href="mailto:inbox@abshands.ru">inbox@abshands.ru</a></li>
+      <li class="email">E-mail: <a href="mailto:editor@absinfo.ru">editor@absinfo.ru</a></li>
       <li class="powered-by">Powered by <%= link_to('typo', 'http://typosphere.org/') %> / <%= link_to('Andrey Moskovskiy', 'http://laylaylalalay.com/') %> / <%= link_to('&hellip;', 'http://clique.ru/') %></li>
     </ul>
   </div>
