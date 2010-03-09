@@ -10,3 +10,4 @@ end
 
 SearchSidebar.view_root = File.dirname(__FILE__) + '/../views/plugins/search_sidebar'
 TagSidebar.view_root = File.dirname(__FILE__) + '/../views/plugins/tag_sidebar'
+PageSidebar.view_root = File.dirname(__FILE__) + '/../views/plugins/page_sidebar'
