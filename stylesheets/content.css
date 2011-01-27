@@ -197,7 +197,7 @@
 #content .atomentry .title .comment_count {
   color: black;
   float: left;
-  margin: 0 27px 0 0;
+  margin: 0 27px 0 -70px;
   position: relative;
   top: 4px;
   font-size: 15px;
