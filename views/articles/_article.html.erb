@@ -5,7 +5,7 @@
   </p>
 
   <h2 class="title">
-    <%= content_tag(:span, article.published_comments.size, :class => 'comment_count') if article.published_comments.size > 0 %>
+   <span class="comment_count"><a href="<%= article.permalink_url + '#disqus_thread' %>"></a></span>
     <%= (controller.action_name.include? 'permalink') ? article.title : link_to_permalink(article,article.title) %>
   </h2>
 
